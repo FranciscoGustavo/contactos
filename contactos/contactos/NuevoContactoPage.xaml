@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="contactos.NuevoContactoPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Entry x:Name="nombreEntry"
+                   Text="Francisco"
+                   Placeholder="Nombre"/>
+            <Entry x:Name="apellidoEntry"
+                   Style="{StaticResource estiloAdicional}"
+                   Text="Apellido Apellido2"
+                   Placeholder="Apellido"/>
+            <Entry x:Name="emailEntry"
+                   Keyboard="Email"
+                   Text="mail@mail.com"
+                   Placeholder="Email"/>
+            <Entry x:Name="telefonoEntry"
+                   Style="{StaticResource estiloAdicional}"
+                   Keyboard="Telephone"
+                   Text="556-783-8171"
+                   Placeholder="Telefono"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
