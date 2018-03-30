@@ -20,6 +20,8 @@
                    Keyboard="Telephone"
                    Text="556-783-8171"
                    Placeholder="Telefono"/>
+            <Button Text="Guardar"
+                    Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
