@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -21,7 +22,11 @@ namespace contactos.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new contactos.App());
+            string nombreArchivo = "bd_contactos.sqlite";
+            string rutaCarpeta = ApplicationData.Current.LocalFolder.Path;
+            string rutacompleta = Path.Combine(rutaCarpeta, nombreArchivo);
+
+            LoadApplication(new contactos.App(rutacompleta));
         }
     }
 }

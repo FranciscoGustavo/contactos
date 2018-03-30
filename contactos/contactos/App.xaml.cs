@@ -16,6 +16,17 @@ namespace contactos
 			MainPage = new contactos.MainPage();
 		}
 
+        public static string Ruta_DB;
+
+        public App(String ruta_id)
+        {
+            InitializeComponent();
+
+            MainPage = new contactos.MainPage();
+
+            Ruta_DB = ruta_id;
+        }
+
 		protected override void OnStart ()
 		{
 			// Handle when your app starts
