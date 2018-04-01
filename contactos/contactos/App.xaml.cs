@@ -13,8 +13,8 @@ namespace contactos
 		{
 			InitializeComponent();
 
-			MainPage = new contactos.MainPage();
-		}
+			MainPage = new NavigationPage(new MainPage());
+        }
 
         public static string Ruta_DB;
 
@@ -22,7 +22,7 @@ namespace contactos
         {
             InitializeComponent();
 
-            MainPage = new contactos.MainPage();
+            MainPage = new NavigationPage(new MainPage());
 
             Ruta_DB = ruta_id;
         }
