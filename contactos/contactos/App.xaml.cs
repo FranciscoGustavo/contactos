@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,9 @@ using Xamarin.Forms;
 
 namespace contactos
 {
-	public partial class App : Application
-	{
+    public partial class App : Application
+    {
+        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://bgcontactos.azurewebsites.net");
 		public App ()
 		{
 			InitializeComponent();

@@ -6,6 +6,14 @@ namespace contactos.Clases
 {
     public class Contacto
     {
+        private string id;
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         private string nombre;
 
         public string Nombre

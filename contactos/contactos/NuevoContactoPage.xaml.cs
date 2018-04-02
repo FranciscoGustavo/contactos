@@ -18,7 +18,7 @@ namespace contactos
 			InitializeComponent ();
 		}
 
-        private void Button_Clicked(object sender, EventArgs args)
+        private async void Button_Clicked(object sender, EventArgs args)
         {
             Contacto nuevoContacto = new Contacto()
             {
@@ -28,12 +28,20 @@ namespace contactos
                 Email = emailEntry.Text
             };
 
-            using (var conn = new SQLite.SQLiteConnection(App.Ruta_DB))
+            // using (var conn = new SQLite.SQLiteConnection(App.Ruta_DB))
+            //{
+            //    conn.CreateTable<Contacto>();
+            //   conn.Insert(nuevoContacto);
+            //}
+
+            try
             {
-                conn.CreateTable<Contacto>();
-                conn.Insert(nuevoContacto);
+                await App.MobileServiceClient.GetTable<Contacto>().InsertAsync(nuevoContacto);
+                await DisplayAlert("Exito", "El contacto fue insertado", "OK");
+            } catch(Exception ex)
+            {
+                await DisplayAlert("Error", "El contacto no fue insertado", "OK");
             }
-           
         }
 
     }
